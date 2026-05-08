@@ -31,16 +31,21 @@ HTTP Client: Axios
 
 Notifications: React Hot Toast
 
-🚀 Kurulum ve Çalıştırma
-1. Backend Hazırlığı
-PowerShell
+## 🚀 Kurulum ve Yerel Çalıştırma
+
+Projeyi yerel ortamınızda çalıştırabilmek için bilgisayarınızda **Node.js** ve **PostgreSQL** kurulu olmalıdır.
+
+### 1. Depoyu Klonlayın
+```bash
+git clone [https://github.com/tugbasaridas/FitTubii-app.git](https://github.com/tugbasaridas/FitTubii-app.git)
+cd FitTubii-app
+2. Backend Hazırlığı ve Veritabanı Bağlantısı
+Backend bağımlılıklarını yükleyin:
 cd sporbackend
 npm install
-# Veritabanı bağlantı ayarlarını yapılandırdıktan sonra:
-npm run start:dev
-
-2. Frontend Hazırlığı
-PowerShell
-cd ../sporfrontend
+3. Frontend Hazırlığı
+Yeni bir terminal penceresi açın, frontend dizinine geçin ve istemciyi başlatın:
+cd sporfrontend
 npm install
 npm run dev
+Uygulama varsayılan olarak http://localhost:5173 adresinde yayına girecektir
