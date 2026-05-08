@@ -42,7 +42,6 @@ export default function AntrenmanYap() {
 
   return (
     <div className="max-w-3xl mx-auto p-6 space-y-8">
-      {/* BAŞLIK VE KOÇ NOTU */}
       <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
         <h1 className="text-3xl font-black text-indigo-600 uppercase">
           {atama.antrenman?.ad}

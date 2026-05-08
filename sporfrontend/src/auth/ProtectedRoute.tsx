@@ -11,12 +11,10 @@ type Props = {
 export default function ProtectedRoute({ children, izinliRoller }: Props) {
   const { kullanici } = useAuth();
 
-  // 🔒 Giriş yoksa → misafir → giriş sayfası
   if (!kullanici) {
     return <Navigate to="/giris" replace />;
   }
 
-  // 🔒 Rol yetkisi yoksa → kendi ana sayfasına
   if (!izinliRoller.includes(kullanici.rol)) {
     if (kullanici.rol === "ADMIN") return <Navigate to="/admin" replace />;
     if (kullanici.rol === "KOC") return <Navigate to="/koc" replace />;

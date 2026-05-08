@@ -21,7 +21,6 @@ import SporcuSayfa from "../pages/user/SporcuAnasayfa";
 import AntrenmanYap from "../pages/user/AntrenmanYap";
 import SerbestAntrenmanEkle from "../pages/user/SerbestAntrenmanEkle";
 
-// Giriş yapmış kullanıcıyı engelleyen kontrol
 const PublicRoute = ({ children }: { children: JSX.Element }) => {
   const { kullanici } = useAuth();
   

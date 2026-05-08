@@ -47,7 +47,6 @@ export default function SerbestAntrenmanEkle() {
         </div>
 
         <form onSubmit={handleKaydet} className="space-y-5">
-          {/* AKTİVİTE ADI (ZORUNLU) */}
           <div>
             <label className="block text-[10px] font-black text-indigo-500 uppercase tracking-widest mb-2 px-2">Aktivite İsmi *</label>
             <input
@@ -60,7 +59,6 @@ export default function SerbestAntrenmanEkle() {
             />
           </div>
 
-          {/* SET VE TEKRAR (OPSİYONEL) */}
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 px-2">Set (Opsiyonel)</label>
@@ -84,7 +82,6 @@ export default function SerbestAntrenmanEkle() {
             </div>
           </div>
 
-          {/* NOTLAR (OPSİYONEL) */}
           <div>
             <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 px-2">Yorumlar (Opsiyonel)</label>
             <textarea

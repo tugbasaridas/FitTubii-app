@@ -11,14 +11,12 @@ export class KullanicilarService {
     private readonly repo: Repository<Kullanici>,
   ) {}
 
-  // ADMIN için
   tumKullanicilar() {
     return this.repo.find({
       select: ['id', 'ad', 'email', 'rol'],
     });
   }
 
-  // KOC için → sadece USER
   kocIcinKullanicilar() {
     return this.repo.find({
       where: { rol: Rol.USER },

@@ -18,17 +18,14 @@ export default function KocTakipSayfasi() {
         {takipVerisi.map((item) => (
           <div key={item.id} className="bg-white p-6 rounded-4xl shadow-sm border border-slate-100 flex justify-between items-center">
             
-            {/* SOL TARAF: İsim ve Antrenman Bilgisi */}
             <div className="flex flex-col gap-1">
               <p className="font-black text-indigo-600 text-xl uppercase tracking-tighter">
                 {item.antrenman?.ad || "İsimsiz Antrenman"}
               </p>
-              {/* Kullanıcı ismi burada daha küçük ve şık dursun */}
               <p className="text-slate-400 font-bold text-sm uppercase">
                 Danışan: {item.kullanici?.adSoyad || item.kullanici?.ad || "Bilinmeyen"}
               </p>
               
-              {/* TARİH BURADA: Sadece tamamlandıysa ve tarih varsa gözükür */}
               {item.tamamlandiMi && item.tamamlanmaTarihi && (
                 <div className="mt-2 flex items-center gap-2 text-slate-500 bg-slate-50 w-fit px-3 py-1 rounded-full border border-slate-100">
                   <span className="text-[11px] font-black uppercase italic">
@@ -43,7 +40,6 @@ export default function KocTakipSayfasi() {
               )}
             </div>
 
-            {/* SAĞ TARAF: Durum Etiketi */}
             <div className={`px-5 py-2 rounded-2xl text-[10px] font-black tracking-widest shadow-sm ${
               item.tamamlandiMi 
                 ? "bg-green-100 text-green-600 border border-green-200" 

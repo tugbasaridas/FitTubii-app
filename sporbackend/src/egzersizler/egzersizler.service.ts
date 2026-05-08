@@ -12,7 +12,6 @@ export class EgzersizlerService {
     private readonly repo: Repository<Egzersiz>,
   ) {}
 
-  // 🔓 sadece aktif egzersizler
   hepsi(kategori?: EgzersizKategori) {
     if (kategori) {
       return this.repo.find({
@@ -25,7 +24,6 @@ export class EgzersizlerService {
     });
   }
 
-  // 🔓 tek egzersiz
   async getir(id: number) {
     const egzersiz = await this.repo.findOne({
       where: { id, aktif: true },
@@ -38,7 +36,6 @@ export class EgzersizlerService {
     return egzersiz;
   }
 
-  // 🔐 ADMIN
   ekle(dto: any) {
     const egzersiz = this.repo.create({
       ad: dto.ad,
@@ -52,7 +49,6 @@ export class EgzersizlerService {
     return this.repo.save(egzersiz);
   }
 
-  // 🔐 ADMIN (DTO’ya göre)
   async guncelle(id: number, dto: UpdateEgzersizDto) {
     const egzersiz = await this.repo.findOne({ where: { id } });
     if (!egzersiz) {
@@ -64,7 +60,6 @@ export class EgzersizlerService {
     return this.repo.save(egzersiz);
   }
 
-  // 🔐 ADMIN (soft delete)
   async sil(id: number) {
     const egzersiz = await this.repo.findOne({ where: { id } });
     if (!egzersiz) {

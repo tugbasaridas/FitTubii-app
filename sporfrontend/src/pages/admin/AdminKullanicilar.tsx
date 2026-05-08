@@ -16,7 +16,7 @@ export default function AdminKullanicilar() {
   const kullanicilariGetir = async () => {
     try {
       setLoading(true);
-      const res = await api.get("/kullanicilar"); // Backend: KullanicilarController -> tumKullanicilar()
+      const res = await api.get("/kullanicilar"); 
       setKullanicilar(res.data);
     } catch (err) {
       toast.error("Kullanıcılar yüklenirken bir hata oluştu ❌");

@@ -29,7 +29,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [kullanici, setKullanici] = useState<Kullanici | null>(null);
   const navigate = useNavigate();
 
-  // 🔁 Sayfa yenilenince token varsa kullanıcıyı çek
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) return;
@@ -48,7 +47,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
   }, []);
 
-  // ✅ GİRİŞ
   const girisYap = async (email: string, sifre: string): Promise<Rol> => {
     try {
       const res = await api.post("/auth/login", { email, sifre });
@@ -67,7 +65,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
       toast.success("Giriş başarılı 🎉");
 
-      // 🔥 ROLE GÖRE YÖNLENDİR
       if (user.rol === "ADMIN") {
         navigate("/admin", { replace: true });
       } else if (user.rol === "KOC") {
@@ -83,7 +80,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  // ✅ KAYIT
   const kayitOl = async (ad: string, email: string, sifre: string) => {
     try {
       await api.post("/auth/register", {
@@ -104,7 +100,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  // ✅ ÇIKIŞ
   const cikisYap = () => {
     localStorage.removeItem("token");
     setKullanici(null);

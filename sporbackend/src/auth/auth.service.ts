@@ -20,7 +20,6 @@ export class AuthService {
     private readonly jwtService: JwtService,
   ) {}
 
-  // ✅ REGISTER
   async register(dto: RegisterDto) {
     const emailVarMi = await this.kullaniciRepo.findOne({
       where: { email: dto.email },
@@ -36,13 +35,12 @@ export class AuthService {
       ad: dto.ad,
       email: dto.email,
       sifre: hashed,
-      rol: dto.rol ?? Rol.USER, // rol gelmezse USER
+      rol: dto.rol ?? Rol.USER, 
     });
 
     return this.kullaniciRepo.save(yeni);
   }
 
-  // ✅ LOGIN
   async login(dto: LoginDto) {
     const kullanici = await this.kullaniciRepo.findOne({
       where: { email: dto.email },

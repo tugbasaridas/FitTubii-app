@@ -10,7 +10,7 @@ type Kullanici = {
 
 export default function KocAnasayfa() {
   const [kullanicilar, setKullanicilar] = useState<Kullanici[]>([]);
-  const [takipVerisi, setTakipVerisi] = useState<any[]>([]); // İstatistikler için
+  const [takipVerisi, setTakipVerisi] = useState<any[]>([]); 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,7 +31,6 @@ export default function KocAnasayfa() {
     verileriGetir();
   }, []);
 
-  // --- İSTATİSTİK HESAPLAMALARI ---
   const toplamAtanan = takipVerisi.length;
 
   const bugun = new Date().toLocaleDateString('tr-TR'); 

@@ -13,7 +13,6 @@ import { Rol } from './rol.enum';
 export class KullanicilarController {
   constructor(private readonly service: KullanicilarService) {}
 
-  // 🔐 ADMIN → tüm kullanıcılar
   @Get()
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Rol.ADMIN)
@@ -21,7 +20,6 @@ export class KullanicilarController {
     return this.service.tumKullanicilar();
   }
 
-  // 🔐 KOC → sadece USER rolündekiler
   @Get('koc')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Rol.KOC)

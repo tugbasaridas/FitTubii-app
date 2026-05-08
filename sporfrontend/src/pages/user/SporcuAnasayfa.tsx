@@ -37,7 +37,6 @@ export default function KullaniciAnasayfa() {
         <h1 className="text-3xl font-black text-slate-800 uppercase tracking-tighter italic">💪 Antrenman Takibi</h1>
       </div>
 
-      {/* SEKME SEÇİCİ */}
       <div className="flex bg-slate-200 p-1 rounded-2xl">
         <button
           onClick={() => setActiveTab("koc")}
@@ -58,7 +57,6 @@ export default function KullaniciAnasayfa() {
       ) : (
         <div className="space-y-4">
           {activeTab === "koc" ? (
-            /* KOÇ PROGRAMI */
             atamaListesi.length === 0 ? (
               <div className="text-center py-12 bg-slate-50 rounded-4xl border-2 border-dashed border-slate-200">
                 <p className="text-slate-400 font-bold italic">Henüz atanmış bir programın yok.</p>
@@ -74,7 +72,6 @@ export default function KullaniciAnasayfa() {
                       <span className={`text-[10px] font-black px-2 py-0.5 rounded-lg uppercase tracking-widest ${item.tamamlandiMi ? "bg-green-100 text-green-600" : "bg-amber-100 text-amber-600"}`}>
                         {item.tamamlandiMi ? "TAMAMLANDI ✅" : "BEKLEMEDE ⏳"}
                       </span>
-                      {/* KOÇ PROGRAMI TARİHİ */}
                       {item.tamamlanmaTarihi && (
                         <p className="text-[10px] text-slate-400 font-bold italic">
                           {new Date(item.tamamlanmaTarihi).toLocaleDateString('tr-TR')}
@@ -92,7 +89,6 @@ export default function KullaniciAnasayfa() {
               ))
             )
           ) : (
-            /* SERBEST SPOR */
             <div className="space-y-4">
               <Link 
                 to="/serbest-ekle" 
@@ -123,7 +119,6 @@ export default function KullaniciAnasayfa() {
 
                     <p className="text-slate-400 font-bold text-xs italic">{s.notlar || "Not yok"}</p>
                     
-                    {/* SERBEST SPOR TARİHİ BURAYA EKLENDİ */}
                     <p className="text-[10px] text-indigo-500 font-black mt-2 uppercase tracking-tighter">
                       {(s.tamamlanmaTarihi || s.tarih) 
                         ? new Date(s.tamamlanmaTarihi || s.tarih).toLocaleDateString('tr-TR') 

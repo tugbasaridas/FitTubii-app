@@ -22,7 +22,6 @@ export default function AdminEgzersizler() {
   const [youtubeUrl, setYoutubeUrl] = useState("");
   const [resim, setResim] = useState<File | null>(null);
 
-  /* ================= GETİR ================= */
   const getir = async () => {
     const res = await api.get("/egzersizler");
     setEgzersizler(res.data);
@@ -32,7 +31,6 @@ export default function AdminEgzersizler() {
     getir();
   }, []);
 
-  /* ================= FORM RESET ================= */
   const temizle = () => {
     setSeciliId(null);
     setAd("");
@@ -42,7 +40,6 @@ export default function AdminEgzersizler() {
     setResim(null);
   };
 
-  /* ================= EKLE ================= */
   const ekle = async () => {
     const fd = new FormData();
     fd.append("ad", ad);
@@ -56,7 +53,6 @@ export default function AdminEgzersizler() {
     temizle();
   };
 
-  /* ================= GÜNCELLE ================= */
   const guncelle = async () => {
     if (!seciliId) return;
 
@@ -72,13 +68,11 @@ export default function AdminEgzersizler() {
     temizle();
   };
 
-  /* ================= SİL ================= */
   const sil = async (id: number) => {
     await api.delete(`/egzersizler/${id}`);
     getir();
   };
 
-  /* ================= DÜZENLE ================= */
   const duzenle = (e: any) => {
     setSeciliId(e.id);
     setAd(e.ad);
@@ -92,7 +86,6 @@ export default function AdminEgzersizler() {
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       <h1 className="text-3xl font-black">Admin · Egzersiz Yönetimi</h1>
 
-      {/* ================= FORM ================= */}
       <div className="bg-white p-6 rounded shadow space-y-3">
         <input
           placeholder="Egzersiz adı"
@@ -127,7 +120,6 @@ export default function AdminEgzersizler() {
           className="w-full border p-2 rounded"
         />
 
-        {/* ===== RESİM SEÇ BUTON ===== */}
         <div className="space-y-2">
           <input
             id="resimInput"
@@ -151,7 +143,6 @@ export default function AdminEgzersizler() {
           )}
         </div>
 
-        {/* ===== BUTONLAR ===== */}
         <div className="flex gap-3">
           {seciliId ? (
             <>
@@ -179,7 +170,7 @@ export default function AdminEgzersizler() {
         </div>
       </div>
 
-      {/* ================= LİSTE ================= */}
+ 
       <div className="space-y-4">
         {egzersizler.map((e) => (
           <div

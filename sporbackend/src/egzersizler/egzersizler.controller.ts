@@ -26,25 +26,21 @@ import { EgzersizKategori } from './egzersiz-kategori.enum';
 export class EgzersizlerController {
   constructor(private readonly service: EgzersizlerService) {}
 
-  // 🔓 herkes
   @Get()
   hepsi(@Query('kategori') kategori?: string) {
     return this.service.hepsi(kategori as EgzersizKategori);
   }
 
-  // 🔓 enum kategori listesi
   @Get('kategoriler')
   kategoriler() {
     return Object.values(EgzersizKategori);
   }
 
-  // 🔓 tek egzersiz
   @Get(':id')
   getir(@Param('id') id: number) {
     return this.service.getir(Number(id));
   }
 
-  // 🔐 ADMIN → EKLE
   @Post()
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Rol.ADMIN)
@@ -74,7 +70,6 @@ export class EgzersizlerController {
     return this.service.ekle(dto);
   }
 
-  // 🔐 ADMIN → GÜNCELLE
   @Put(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Rol.ADMIN)
@@ -107,7 +102,6 @@ export class EgzersizlerController {
     return this.service.guncelle(Number(id), dto);
   }
 
-  // 🔐 ADMIN → SOFT DELETE
   @Delete(':id')
   @UseGuards(JwtAuthGuard, RolesGuard)
   @Roles(Rol.ADMIN)

@@ -59,7 +59,6 @@ export default function DanisanDetay() {
                   {item.antrenman?.ad || "Genel Antrenman"}
                 </p>
                 
-                {/* TARİH EKLEMESİ: İşte burada tarih devreye giriyor */}
                 {item.tamamlandiMi && item.tamamlanmaTarihi ? (
                   <div className="flex items-center gap-2 text-slate-500 bg-slate-50 px-3 py-1 rounded-full w-fit border border-slate-100">
                     <span className="text-[10px] font-black uppercase italic">
