@@ -1,4 +1,4 @@
-## 🏋️ FitTubii-app | Full-Stack Fitness Management System
+🏋️ # FitTubii-app | Full-Stack Fitness Management System
 
 FitTubii, spor yönetimi süreçlerini dijitalleştirmek için geliştirilmiş, yüksek performanslı ve hiyerarşik yapıya sahip bir fitness platformudur. Proje, kullanıcıların antrenman süreçlerini koç denetimiyle veya bireysel olarak yönetebileceği modüler bir mimari sunar.
 
@@ -11,7 +11,7 @@ Sistem, üç farklı yetki seviyesi üzerinden dinamik bir iş akışı sağlar:
 
 💪 Sporcu (User) Modülü: Koç tarafından atanan programları uygular veya kendi tercihine göre serbest antrenman kayıtları oluşturabilir.
 
-#⚙️ Teknik Stack
+⚙️# Teknik Stack
 Backend (sporbackend)
 Framework: NestJS (v11)
 
