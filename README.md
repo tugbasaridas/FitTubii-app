@@ -1,4 +1,4 @@
-##🏋️ FitTubii-app | Full-Stack Fitness Management System
+## 🏋️ FitTubii-app | Full-Stack Fitness Management System
 
 FitTubii, spor yönetimi süreçlerini dijitalleştirmek için geliştirilmiş, yüksek performanslı ve hiyerarşik yapıya sahip bir fitness platformudur. Proje, kullanıcıların antrenman süreçlerini koç denetimiyle veya bireysel olarak yönetebileceği modüler bir mimari sunar.
 
